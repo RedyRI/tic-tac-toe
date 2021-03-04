@@ -51,7 +51,7 @@ let gameOptions = (function() {
     }
 
     function changePlayerMark(e) {
-        console.log(e.target.textContent);
+        console.log('you have choosen ' + e.target.textContent);
         pubSub.emit('changePlayerMark', e.target.textContent)
         paintBtn(e.target.textContent.toLowerCase());
     }
@@ -91,7 +91,7 @@ let gameOptions = (function() {
     }
     
     function enableBtns(i) {
-        console.log(mode);
+        console.log('mode ' + mode);
         if (mode == 1) {
             markOptions.forEach(item => {
                 item.disabled = false;

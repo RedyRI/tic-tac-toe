@@ -5,6 +5,8 @@ let winner = (function(){
     
     pubSub.on('gotWinner', showWinner);
     pubSub.on('draw', showDraw);
+    pubSub.on('cleanBoard', restartGame);
+
 
     // bind events
     restartBtn.addEventListener('click', restartGame);

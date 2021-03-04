@@ -40,9 +40,6 @@ let board = (function(){
 
     function changePlayerMark(m) {
         m = m.toLowerCase()
-        console.log(m);
-        console.log(players[0].markSymbol);
-
         if(players[0].markSymbol != m) {
             players[0].markSymbol = m;
             if (m == 'x') {
@@ -60,15 +57,17 @@ let board = (function(){
     }
 
     function changeTurn() {
-        if (currentTurn == 'player1') {
+        if (mode == 2) {   
+            if (currentTurn == 'player1') {
+                currentTurn = 'player2'
+            } else {
+                currentTurn = 'player1'
+            }
+        } else if (mode == 1 && currentTurn == 'player1') {
             currentTurn = 'player2'
-        } else {
-            currentTurn = 'player1'
-        }
-        pubSub.emit('turnChanged', currentTurn);
-        if(mode == 1 && currentTurn == 'player2') {
             render();
         }
+        pubSub.emit('turnChanged', currentTurn);
     }
 
         function restartBoard() {
@@ -86,6 +85,8 @@ let board = (function(){
             currentTurn = 'player1';
             pubSub.emit('turnChanged', currentTurn);
             console.log(p1Choices, p2Choices);
+            ai.restart();
+            console.log(ai.getPosibleChoices());
         }
 
     function render(e) {
@@ -131,7 +132,9 @@ let board = (function(){
                 gameboard[e.target.getAttribute('data-id')] = players[0].markSymbol;
                 players[0].playerChoices[e.target.getAttribute('data-id')] = 1;
                 e.target.style.pointerEvents = 'none';
-
+                
+                console.log('player choice ' + e.target.getAttribute('data-id'));
+                
                 if(iteration == 1) {
                     pubSub.emit('boardStarted', 1);
                 }
@@ -144,12 +147,13 @@ let board = (function(){
                 }else {
                     iteration += 1;
                     let choice = ai.makeChoice(gameboard);
-                    if (choice) {   
+                    if (choice || choice == 0) {   
                         squares[choice].style.backgroundImage = players[1].mark;
                         squares[choice].style.pointerEvents = 'none';
                         gameboard[choice] = players[1].markSymbol;
                         players[1].playerChoices[choice] = 1;                    
                     }
+                   console.log('ai choice ' + choice + ' and ' + ai.getPosibleChoices());
 
                     if(checkBoard(players[1])) {
                         console.log(`the winner is ${players[1].markSymbol}`);
@@ -177,6 +181,8 @@ let board = (function(){
                 
                 currentTurn = 'player1';
                 pubSub.emit('currentTurn', currentTurn);
+
+                console.log('ai choice ' + choice + ' and ' + ai.getPosibleChoices());
                 
             }
         }
