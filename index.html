@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe - The game</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div>
+                <div>
+                    <h1>TIC TAC TOE</h1>
+                </div>
+                <div class="btns">
+                    <p>Change your mark:</p>
+                    <button class="btn">X</button>
+                    <button class="btn">O</button>
+                </div>
+            </div>
+        </header>
+            <div class="game-mode">
+                <button class="mode"> Two Players</button>
+                <button class="mode"> AI </button>
+            </div>
+            <div class="two-players">
+                <input type="text" placeholder="Enter player 1 name">
+                <input type="text" placeholder="Enter player 2 name">
+                <button class="start-btn">Start Game</button>
+            </div>
+            <div class="one-player">
+                <input type="text" placeholder="Enter your name">
+                <div class="mark-btns">
+                    <button class="mark">x</button>
+                    <button class="mark">o</button>
+                </div>
+                <button class="start-btn">Start Game</button>
+            </div>
+            <div class="gameboard">
+                <div class="winner-container">
+                    <p></p>
+                    <button class="restart-btn btn">Restart Game</button>
+                </div>
+                <div data-id='0'class="square box1"></div>
+                <div data-id='1'class="square box2"></div>
+                <div data-id='2'class="square box3"></div>
+                <div data-id='3'class="square box4"></div>
+                <div data-id='4'class="square box5"></div>
+                <div data-id='5'class="square box6"></div>
+                <div data-id='6'class="square box7"></div>
+                <div data-id='7'class="square box8"></div>
+                <div data-id='8'class="square box9"></div>
+            </div>
+            <div class="options">
+                <button class="start-second btn">Change Turn</button>
+                <button class="restart btn">restart Game</button>
+                <button class="clean-board btn">clean Board </button>
+            </div>
+            <div class="game-info">
+                <div class="player1-info player"></div>
+                <div class="player2-info player"></div>
+                <div class="turn"></div>
+            </div>
+    </div>
+
+        <!-- <script src="./app.js"></script>
+        <script src="./player.js"></script> -->
+        <script src="./pubSub.js"></script>
+        <script src="./personFactory.js"></script>
+        <script src="./computerLogic.js"></script>
+        <script src="./gameStart.js"></script>
+        <script src="./board.js"></script>
+        <script src="./gameLogic.js"></script>
+        <script src="./gameInfo.js"></script>
+        <script src="./gameOptions.js"></script>
+        <script src="./winner.js"></script>
+</body>
+</html>

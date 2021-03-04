@@ -1,0 +1,250 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    margin: 0 auto 10px auto;
+    text-align: center;
+}
+
+.gameboard {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 225px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row: 1fr 1fr 1f;
+    grid-template-areas: 
+        "box1 box2 box3"
+        "box4 box5 box6"
+        "box7 box8 box9"
+    ;
+    pointer-events: none;
+}
+
+.winner-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(120, 0, 0, 0.5);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.winner-container > p {
+    color: white;
+    margin: 10px 0;
+    font-size: 4vw;
+    font-family: 'Trade Winds', cursive;
+    text-shadow: 5px 5px 10px black;
+}
+
+.square {
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.btn {
+    padding: 5px 7px;
+}
+
+.box1{
+    grid-area: box1;
+    border: solid black 1px;
+    border-top: none;
+    border-left: none;
+
+}
+.box2{
+    grid-area: box2;
+    border: solid black 1px;
+    border-top: none;
+}
+.box3{
+    grid-area: box3;
+    border: solid black 1px;
+    border-right: none;
+    border-top: none;
+}
+.box4{
+    grid-area: box4;
+    border: solid black 1px;
+    border-left: none;
+}
+.box5{
+    grid-area: box5;
+    border: solid black 1px;
+}
+.box6{
+    grid-area: box6;
+    border: solid black 1px;
+    border-right: none;
+}
+.box7{
+    grid-area: box7;
+    border: solid black 1px;
+    border-left: none;
+    border-bottom: none;
+}
+.box8{
+    grid-area: box8;
+    border: solid black 1px;
+    border-bottom: none;
+}
+.box9{
+    grid-area: box9;
+    border: solid black 1px;
+    border-bottom: none;
+    border-right: none;
+}
+
+.container {
+    border: solid green 1px;
+    margin: 10px auto 0 auto;
+    width: 50%;
+    position: relative;
+    min-height: 350px;
+}
+
+.game-mode {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    top: 0;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mode {
+    width: 100px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+}
+
+.two-players {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(120, 0, 0, 1);
+    top: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.two-players > input {
+    margin: 5px;
+    padding: 5px 7px;
+}
+
+.two-players > button {
+    padding: 5px 7px;
+}
+
+.one-player {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: yellow;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.one-player  button {
+    padding: 5px 15px;
+    margin-top: 5px;
+}
+
+.one-player > input {
+    padding: 5px 7px;
+}
+
+.options {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 5px 0;
+    border: dashed 2px black;
+    padding: 5px 0;
+}
+
+.game-info {
+    border: solid black 1px;
+}
+
+.player1-info, .player2-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 25%;
+    position: fixed;
+    margin: 10px 0 0 0;
+    padding: 0 0 0 15px; 
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+.player-info > .player-name {
+    padding: 5px 7px;
+    text-align: left;
+    font-size: 2rem;
+}
+
+.player-info > .player-number {
+    width: 100%;
+    padding: 5px 0;
+    text-align: left;
+    font-size: 2vw;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.player-info > .player-mark {
+    text-align: center;
+    padding: 5px 7px;
+    font-size: 1.8rem;
+}
+.turn {
+    text-align: center;
+    padding: 5px;
+}
+
+.player1-info {
+    top: 0;
+    left: 0;
+}
+
+.player2-info {
+    top: 0;
+    right: 0;
+}
+
+.player-info span {
+    display: block;
+}
+
+.player-info .player-name, .player-info .player-mark{
+    font-size: 4vw;
+    padding-left: 10px;
+}
+
+.game-info > .turn {
+    font-size: 3vw;
+    font-weight: bolder;
+}
