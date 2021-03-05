@@ -35,11 +35,11 @@ let gameOptions = (function() {
         let mark = typeof data == 'string' ? data : data[0].markSymbol;
 
         if(mark == 'x') {
-            markOptions[0].style.backgroundColor = 'green'
-            markOptions[1].style.backgroundColor = 'rgb(239, 239, 239)'
+            markOptions[0].style.backgroundColor = 'black'
+            markOptions[1].style.backgroundColor = 'rgba(0,0,0,0.4)'
         } else {
-            markOptions[0].style.backgroundColor = 'rgb(239, 239, 239)'
-            markOptions[1].style.backgroundColor = 'green'
+            markOptions[0].style.backgroundColor = 'rgba(0,0,0,0.4)'
+            markOptions[1].style.backgroundColor = 'black'
         }
     }
 

@@ -4,16 +4,43 @@
     padding: 0;
 }
 
+button {
+    color: white;
+    outline: none;
+    border-radius: 7px;
+}
+
 header {
     margin: 0 auto 10px auto;
     text-align: center;
+    color: black;
+}
+
+.btns > p {
+    padding: 5px 0;
+}
+
+.btns > .btn {
+    padding: 5px 10px;
+}
+
+body {
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1 {
+    font-family: 'Trade Winds', cursive;
 }
 
 .gameboard {
     position: relative;
     width: 100%;
-    margin: 0 auto;
-    height: 225px;
+    margin: 5px auto;
+    height: 300px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-row: 1fr 1fr 1f;
@@ -23,6 +50,9 @@ header {
         "box7 box8 box9"
     ;
     pointer-events: none;
+    background-color: #8EC5FC;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+    border-radius: 10px;
 }
 
 .winner-container {
@@ -35,20 +65,26 @@ header {
     justify-content: center;
     align-items: center;
     display: none;
+    border-radius: 10px;
 }
 
 .winner-container > p {
     color: white;
     margin: 10px 0;
-    font-size: 4vw;
+    font-size: 3vw;
     font-family: 'Trade Winds', cursive;
     text-shadow: 5px 5px 10px black;
+}
+
+.winner-container > button {
+    background-color: black;
 }
 
 .square {
     background-repeat: no-repeat;
     background-position: center;
 }
+
 
 .btn {
     padding: 5px 7px;
@@ -105,24 +141,28 @@ header {
 }
 
 .container {
-    border: solid green 1px;
-    margin: 10px auto 0 auto;
-    width: 50%;
+    width: 40%;
     position: relative;
     min-height: 350px;
+    margin-left: 10%;
 }
 
 .game-mode {
     position: fixed;
     width: 100%;
     height: 100%;
-    background-color: black;
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
     top: 0;
     left: 0;
     z-index: 3;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.game-mode > button {
+    background-color: black;
 }
 
 .mode {
@@ -138,7 +178,8 @@ header {
     position: fixed;
     width: 100%;
     height: 100%;
-    background-color: rgba(120, 0, 0, 1);
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
     top: 0;
     left: 0;
     z-index: 2;
@@ -157,16 +198,18 @@ header {
 }
 
 .two-players > button {
-    padding: 5px 7px;
+    padding: 15px 17px;
     margin: 0 auto;
     border-radius: 7px;
+    background-color: black;
 }
 
 .one-player {
     position: fixed;
     width: 100%;
     height: 100%;
-    background-color: yellow;
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
     top: 0;
     left: 0;
     z-index: 1;
@@ -179,6 +222,11 @@ header {
 .one-player  button {
     padding: 5px 15px;
     margin-top: 5px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.one-player > .start-btn {
+    background-color: black;
 }
 
 .one-player > input {
@@ -191,46 +239,53 @@ header {
 .options {
     display: flex;
     justify-content: space-evenly;
-    margin: 5px 0;
-    border: dashed 2px black;
+    margin: 10px 0;
+    border-bottom: dashed 2px black;
     padding: 5px 0;
 }
 
-.game-info {
-    border: solid black 1px;
+.options > .btn {
+    background-color: black;
+    color: white;
+    outline: none;
+    border-radius: 10px;
+    padding: 8px 10px;
 }
 
 .player1-info, .player2-info {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 25%;
+    width: 40%;
     position: fixed;
-    margin: 10px 0 0 0;
-    padding: 0 0 0 15px; 
+    margin: 120px 8% 0 0;
+    padding: 15px 0 15px 15px; 
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
+    border-radius: 10px;
+    color: white;
 }
 
-.player-info > .player-name {
-    padding: 5px 7px;
-    text-align: left;
-    font-size: 2rem;
+.player2-info {
+    padding-left: 15px;
 }
+
 
 .player-info > .player-number {
     width: 100%;
     padding: 5px 0;
-    text-align: left;
-    font-size: 2vw;
+    font-size: 1rem;
     font-family: 'Courier New', Courier, monospace;
 }
 
-.player-info > .player-mark {
-    text-align: center;
-    padding: 5px 7px;
-    font-size: 1.8rem;
+.player-info {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    padding: 10px 10%;
+    margin-left: 5%;
+    min-width: 250px;
 }
+
 .turn {
     text-align: center;
     padding: 5px;
@@ -238,11 +293,11 @@ header {
 
 .player1-info {
     top: 0;
-    left: 0;
+    right: 0;
 }
 
 .player2-info {
-    top: 0;
+    top: 170px;
     right: 0;
 }
 
@@ -251,11 +306,94 @@ header {
 }
 
 .player-info .player-name, .player-info .player-mark{
-    font-size: 4vw;
+    font-size: 2rem;
     padding-left: 10px;
 }
 
 .game-info > .turn {
     font-size: 3vw;
     font-weight: bolder;
+    font-family: 'Trade Winds', cursive;
+}
+
+input[type=text] {
+    font-size: 1rem;
+    font-family: 'Montserrat', cursive;
+    color: black;
+    font-weight: bolder;
+    outline: none;
+}
+
+@media screen and (max-width: 700px) {
+
+    .player1-info, .player2-info {
+        position:relative;
+        display: block;
+        width: 100%;
+        margin: 0;
+        top: 0;
+        padding: 0; 
+    }
+
+    .player-info span{
+        display: inline;
+        font-size: 0.9rem;
+    }
+
+    .container {
+        margin: 10px auto 0 auto;
+        width: 90%;
+        position: relative;
+        min-height: 350px;
+    }
+
+    .player-info > .player-number {
+        font-size: 1rem;
+    }
+
+    .player-info .player-name, .player-info .player-mark{
+        font-size: 1.2rem;
+        padding-left: 5px;
+    }
+    .game-info {
+        margin-top: 0;
+    }
+    .game-info > .turn {
+        font-size: 1.2rem;
+        font-weight: bolder;
+    }
+
+    .player-info > .name-container, .player-info > .mark-container {
+        text-align: center;
+    }
+
+    .gameboard {
+        margin: 0 auto;
+        height: 250px;
+        padding: 0;
+
+    }
+
+    .winner-container > p {
+        font-size: 2rem;
+    }
+
+    h1 {
+        font-size: 1rem;
+    }
+
+    .player-info {
+        border-radius: 10px;
+        min-width: 250px;
+        padding: 1px 10px;
+        margin-bottom: 2px;
+    }
+
+    .options {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 2px 0;
+        border-bottom: dashed 2px black;
+    }
+    
 }

@@ -64,13 +64,13 @@ var gameStart = (
         function gameWithAiMark(e) {
             console.log(e.target.textContent);
             if (e.target == aiModeMarkBtns[0]) {
-                aiModeMarkBtns[0].style.backgroundColor = 'green';
-                aiModeMarkBtns[1].style.backgroundColor = 'rgb(239, 239, 239)';
+                aiModeMarkBtns[0].style.backgroundColor = 'black';
+                aiModeMarkBtns[1].style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
                 mark = x;
                 computerMark = o;
             } else {
-                aiModeMarkBtns[0].style.backgroundColor = 'rgb(239, 239, 239)';
-                aiModeMarkBtns[1].style.backgroundColor = 'green';
+                aiModeMarkBtns[0].style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+                aiModeMarkBtns[1].style.backgroundColor = 'black';
                 mark = o;
                 computerMark = x;
             }
