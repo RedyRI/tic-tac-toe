@@ -1,6 +1,10 @@
 let minimax = (function(){
 
-    
+    let points = {
+        x: 10,
+        o: -10,
+        tie: 0,
+    }
     
     function aiMove(b) {
         
@@ -12,6 +16,11 @@ let minimax = (function(){
         console.log(boardAi);
         console.log(p1);
         console.log(p2);
+
+        if (p2 == 'o') {
+            points.x = -10;
+            points.o = 10;
+        }
 
         if(checkWiner()) {
             console.log('got a winner');
@@ -90,13 +99,13 @@ let minimax = (function(){
         }
         
 
-        
         function minimax(board, deep, isMaximazing) {
-            let points = {
-                'x': 10,
-                'o': -10,
-                'tie': 0,
-            }
+
+            // let points = {
+            //     x: 10,
+            //     o: -10,
+            //     tie: 0,
+            // }
             let result = checkWiner();
             if( result !== null) {
                 return points[result];
@@ -130,6 +139,7 @@ let minimax = (function(){
                 return bestScore;
             }
         }
+
     }
 
 
