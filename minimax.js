@@ -13,7 +13,7 @@ let minimax = (function(){
         console.log(p1);
         console.log(p2);
 
-        if(checkWiner(boardAi)) {
+        if(checkWiner()) {
             console.log('got a winner');
             return '';
         } else {
@@ -35,7 +35,7 @@ let minimax = (function(){
                     }
                 }
             }
-            boardAi[bestMove.i][bestMove.j] = ai;
+            // boardAi[bestMove.i][bestMove.j] = ai;
             console.log(bestMove);
             console.log(boardAi);
             return bestMove.i * 3 + bestMove.j
@@ -90,7 +90,7 @@ let minimax = (function(){
         }
         
 
-
+        
         function minimax(board, deep, isMaximazing) {
             let points = {
                 'x': 10,
