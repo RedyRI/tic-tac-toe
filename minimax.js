@@ -1,8 +1,6 @@
 let minimax = (function(){
 
     let points = {
-        x: 10,
-        o: -10,
         tie: 0,
     }
     
@@ -20,6 +18,9 @@ let minimax = (function(){
         if (p2 == 'o') {
             points.x = -10;
             points.o = 10;
+        } else if(p2 == 'x') {
+            points.x = 10;
+            points.o = -10;
         }
 
         if(checkWiner()) {
