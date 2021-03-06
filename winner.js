@@ -6,6 +6,7 @@ let winner = (function(){
     pubSub.on('gotWinner', showWinner);
     pubSub.on('draw', showDraw);
     pubSub.on('cleanBoard', restartGame);
+    pubSub.on('playAgain', hideWinner);
 
 
     // bind events
@@ -24,7 +25,10 @@ let winner = (function(){
     function restartGame(e) {
         winnerContainer.style.display = 'none';
         pubSub.emit('gameRestarted', 3);
+    }
 
+    function hideWinner() {
+        winnerContainer.style.display = 'none';
     }
 
 })();
